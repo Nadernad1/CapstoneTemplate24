@@ -119,7 +119,7 @@ def callback():
         gprofile_pic = userinfo_response.json()["picture"]
         gname = userinfo_response.json()["name"]
         gfname = userinfo_response.json()["given_name"]
-        glname = userinfo_response.json()["family_name"]
+        glname = userinfo_response.json()["family_name"] if userinfo_response.json().get("family_name") else ""
     else:
         return "User email not available or not verified by Google.", 400
 
